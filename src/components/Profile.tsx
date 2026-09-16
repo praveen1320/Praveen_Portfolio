@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import {
     ArrowDown,
     ArrowRight,
@@ -17,7 +17,7 @@ const containerVariants = {
     },
 };
 
-const itemVariants = {
+const itemVariants : Variants = {
     hidden: {
         opacity: 0,
         y: 24,
@@ -36,7 +36,7 @@ const Profile = () => {
     return (
         <section
             id="home"
-            className="relative flex min-h-screen items-center overflow-hidden px-6 pt-24"
+            className="relative flex min-h-screen items-center overflow-hidden px-6 py-20"
         >
             {/* Background glows */}
             <div className="pointer-events-none absolute left-[15%] top-[20%] -z-10 h-[350px] w-[350px] rounded-full bg-cyan-500/10 blur-[120px]" />

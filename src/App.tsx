@@ -1,4 +1,4 @@
-import Navbar from "./components/NavBar";
+import Navbar from "./components/Navbar";
 import Profile from "./components/Profile";
 import About from "./components/About";
 import Skills from "./components/Skills";
@@ -6,6 +6,7 @@ import Experience from "./components/Experience";
 import Projects from "./components/Project";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Achievements from "./components/Achievements"
 
 function App() {
   return (
@@ -20,9 +21,11 @@ function App() {
 
         <Experience/>
        <Projects />
-
+        <Achievements/>
         <Contact/>
+
         <Footer />
+
       </main>
     </div>
   );
