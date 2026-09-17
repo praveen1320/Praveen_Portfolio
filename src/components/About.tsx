@@ -33,7 +33,7 @@ const capabilities = [
 
 const About = () => {
   return (
-    <section id="about" className="relative overflow-hidden px-6 py-20">
+    <section id="about" className="relative overflow-hidden px-6 pb-20">
       {/* Background glow */}
       <div className="pointer-events-none absolute right-0 top-1/3 -z-10 h-[400px] w-[400px] rounded-full bg-cyan-500/[0.05] blur-[120px]" />
 

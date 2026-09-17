@@ -180,7 +180,7 @@ const Profile = () => {
                         delay: 0.25,
                         ease: "easeOut",
                     }}
-                    className="hidden justify-center lg:flex"
+                    className="flex justify-center"
                 >
                     <div className="relative w-full max-w-sm">
 

@@ -49,6 +49,7 @@ const certifications = [
     title: "UI/UX Figma Design Course",
     subtitle: "UI/UX Design",
     organization: "Udemy",
+    certificate: "/UI_UX_Cert.pdf"
   },
 ];
 
@@ -210,14 +211,8 @@ const Achievements = () => {
             {certifications.map((certification, index) => {
               const Icon = certification.icon;
 
-              return (
-                <motion.div
-                  key={certification.title}
-                  whileHover={{
-                    y: -4,
-                  }}
-                  className="group flex items-center gap-5 rounded-2xl border border-white/10 bg-slate-900/50 p-6 backdrop-blur-xl transition-colors duration-300 hover:border-cyan-400/20"
-                >
+              const cardContent = (
+                <>
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-cyan-400/10 bg-cyan-400/[0.06]">
                     <Icon
                       size={22}
@@ -239,9 +234,35 @@ const Achievements = () => {
                     </p>
                   </div>
 
-                  <span className="hidden text-xs text-slate-700 sm:block">
-                    0{index + 1}
-                  </span>
+                  {certification.certificate ? (
+                    <span className="text-xs text-cyan-400 opacity-70 transition-opacity group-hover:opacity-100">
+                      Download
+                    </span>
+                  ) : (
+                    <span className="hidden text-xs text-slate-700 sm:block">
+                      0{index + 1}
+                    </span>
+                  )}
+                </>
+              );
+
+              return certification.certificate ? (
+                <motion.a
+                  key={certification.title}
+                  href={certification.certificate}
+                  download
+                  whileHover={{ y: -4 }}
+                  className="group flex items-center gap-5 rounded-2xl border border-white/10 bg-slate-900/50 p-6 backdrop-blur-xl transition-colors duration-300 hover:border-cyan-400/20"
+                >
+                  {cardContent}
+                </motion.a>
+              ) : (
+                <motion.div
+                  key={certification.title}
+                  whileHover={{ y: -4 }}
+                  className="group flex items-center gap-5 rounded-2xl border border-white/10 bg-slate-900/50 p-6 backdrop-blur-xl transition-colors duration-300 hover:border-cyan-400/20"
+                >
+                  {cardContent}
                 </motion.div>
               );
             })}
